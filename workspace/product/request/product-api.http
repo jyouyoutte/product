@@ -1,0 +1,47 @@
+# Variables
+@host = http://localhost:8080
+
+### Liste des produits
+GET {{host}}/api/v1/products
+Accept: application/json
+
+### Récupérer un produit par id
+# Remplacez {{id}} par un id réel
+GET {{host}}/api/v1/products/{{id}}
+Accept: application/json
+
+### Créer un produit
+POST {{host}}/api/v1/products
+Content-Type: application/json
+
+{
+  "name": "Chaise",
+  "price": 49.99
+}
+
+### Remplacer un produit (PUT)
+# Remplacez {{id}} par l'id du produit à remplacer
+PUT {{host}}/api/v1/products/{{id}}
+Content-Type: application/json
+
+{
+  "name": "Chaise Confort",
+  "price": 59.99
+}
+
+### Mise à jour partielle (PATCH)
+# Mettre à jour uniquement les champs souhaités
+PATCH {{host}}/api/v1/products/{{id}}
+Content-Type: application/json
+
+{
+  "price": 79.90
+}
+
+### Supprimer un produit
+# Remplacez {{id}} par l'id du produit à supprimer
+DELETE {{host}}/api/v1/products/{{id}}
+
+# Notes
+# - Ouvrez ce fichier dans l'HTTP Client d'IntelliJ (fichier .http) et exécutez les requêtes directement.
+# - Vous pouvez aussi copier chaque requête en curl si vous préférez la ligne de commande.
